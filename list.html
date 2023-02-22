@@ -36,28 +36,27 @@
         }
 
         function ajax() {
-            var params = new FormData();
-            params.append('name', '1');
-            var param = '12312=1123';
             $.ajax({
-                url:"http://localhost:8081/delete",
-                type:"DELETE",
-                contentType: application/x-www-urlencoded,
-                data: param,
-                dataType: 'text',
+                url:"/delete",
+                method:"DELETE",
+                //contentType: 'application/x-www-urlencoded',
+                data: {id: '1'},
+                //dataType: 'text',
                 complete: function(data) {
-                    console.log("asdf");
+                    console.log("complete");
                 },
                 success: function(data) {
-                    console.log(data);
+                    console.log("success");
                 },
                 error: function(error) {
-
+                    console.log("1");
                 },
             }).done(function(result) {
                 console.log(result);
-            }).fail(function(error) {
-                console.log(error);
+            }).fail(function(xhr, textStatus, errorThrown) {
+                console.log(xhr);
+                console.log(textStatus);
+                console.log(errorThrown);
             })
         }
     </script>       
