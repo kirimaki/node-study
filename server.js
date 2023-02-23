@@ -63,3 +63,9 @@ app.get('/login', (req, res) => {
     console.log('test');
     return res.send(params);
 });
+
+app.post('/join', (req, res) => {
+    console.log('join');
+    console.log(req.params);
+    return res.send(req.params);
+})
